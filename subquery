@@ -1,0 +1,40 @@
+List the name and continent of countries in the continents containing either Argentina or Australia. Order by name of the country.
+
+table given -->
+
+name	continent	area	population	gdp
+Afghanistan	Asia	652230	25500100	20343000000
+Albania	Europe	28748	2831741	12960000000
+Algeria	Africa	2381741	37100000	188681000000
+Andorra	Europe	468	78115	3712000000
+Angola	Africa	1246700	20609294	100990000000
+
+
+
+sql query -->
+
+select name, continent
+from world
+where continent = ( select continent from world 
+                     where name = 'Argentina' or 'Australia' 
+                    )
+order by name; 
+
+
+
+output -->
+
+Result:
+name	continent
+Argentina	South America
+Bolivia	South America
+Brazil	South America
+Chile	South America
+Colombia	South America
+Ecuador	South America
+Guyana	South America
+Paraguay	South America
+Peru	South America
+Suriname	South America
+Uruguay	South America
+Venezuela	South America
